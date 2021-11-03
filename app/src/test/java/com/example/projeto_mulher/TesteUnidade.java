@@ -8,6 +8,7 @@ import com.example.projeto_mulher.dominio.Vitima;
 import org.junit.Assert;
 import org.junit.Test;
 
+
 public class TesteUnidade {
 
     static Vitima fabricarVtima() {

@@ -3,6 +3,12 @@ package com.example.projeto_mulher.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Define abstração de pessoa
+ * @author Felipe Nathan
+ * @since 03/11/2021
+ * @version 1.0 03/11/2021
+ */
 public abstract class Pessoa {
     protected Long id;
     protected String nome;
