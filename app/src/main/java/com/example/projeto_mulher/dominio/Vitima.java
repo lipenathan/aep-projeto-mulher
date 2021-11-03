@@ -3,6 +3,12 @@ package com.example.projeto_mulher.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa a vítima/usuário do aplicação
+ * @author Felipe Nathan
+ * @since 03/11/2021
+ * @version 03/11/2021
+ */
 public class Vitima extends Pessoa {
     private String numeroOcorrencia;
     private List<Contato> contatos = new ArrayList<>();
