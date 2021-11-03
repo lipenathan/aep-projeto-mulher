@@ -1,5 +1,11 @@
 package com.example.projeto_mulher.dominio;
 
+/**
+ * Representa número telefonico
+ * @author lipen
+ * @since 03/11/2021
+ * @version 1.0 03/11/2021
+ */
 public class Telefone {
     private Long id;
     private String numero;
