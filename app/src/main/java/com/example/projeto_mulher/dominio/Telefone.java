@@ -1,5 +1,7 @@
 package com.example.projeto_mulher.dominio;
 
+import javax.persistence.Id;
+
 /**
  * Representa número telefonico
  * @author Felipe Nathan
@@ -7,6 +9,7 @@ package com.example.projeto_mulher.dominio;
  * @version 1.0 03/11/2021
  */
 public class Telefone {
+    @Id
     private Long id;
     private String numero;
     private Tipo tipo;
