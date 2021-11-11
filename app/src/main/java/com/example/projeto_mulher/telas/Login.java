@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.projeto_mulher.R;
-import com.example.projeto_mulher.dominio.Telefone;
-import com.example.projeto_mulher.dominio.Vitima;
+import com.example.projeto_mulher.regras.dominio.Telefone;
+import com.example.projeto_mulher.regras.dominio.Vitima;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private Button btCadastro;
     private TextView txNome;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         btCadastro = findViewById(R.id.btCadastro);
         txNome = findViewById(R.id.txNome);
         txTelefone = findViewById(R.id.txTelefone);

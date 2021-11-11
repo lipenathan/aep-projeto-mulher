@@ -1,9 +1,7 @@
-package com.example.projeto_mulher.dominio;
+package com.example.projeto_mulher.regras.dominio;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import javax.persistence.Id;
 
 /**
  * Domínio dos registros de ocorrências da vítima
@@ -14,7 +12,6 @@ import javax.persistence.Id;
  */
 public class Ocorrencias {
 
-    @Id
     private Long numeroOcorrencia;
     private LocalDate dataOcorrencia;
     private LocalTime horarioOcorrencia;

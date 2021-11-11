@@ -1,25 +1,24 @@
-package com.example.projeto_mulher.dominio;
+package com.example.projeto_mulher.regras.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Id;
-
 /**
  * Define abstração de pessoa
+ *
  * @author Felipe Nathan
- * @since 03/11/2021
  * @version 1.0 03/11/2021
+ * @since 03/11/2021
  */
 public abstract class Pessoa {
-    @Id
+
     protected Long id;
     protected String nome;
     protected String cpf;
     protected String endereco;
     protected List<Telefone> telefones = new ArrayList<>();
 
-    public void validarCampos() throws Exception{
+    public void validarCampos() throws Exception {
         if (this.nome == null || nome.equals("")) {
             throw new Exception(gerarMensagemErro("nome"));
         }
@@ -28,13 +27,13 @@ public abstract class Pessoa {
         }
     }
 
-    public void adicionarTelefone(Telefone telefone) throws Exception{
+    public void adicionarTelefone(Telefone telefone) throws Exception {
         telefone.validarCampos();
         this.telefones.add(telefone);
     }
 
     protected String gerarMensagemErro(String campo) {
-        return "O campo: " + campo + ", de "+ this.getClassName() +" precisa ser preenchido";
+        return "O campo: " + campo + ", de " + this.getClassName() + " precisa ser preenchido";
     }
 
     private String getClassName() {

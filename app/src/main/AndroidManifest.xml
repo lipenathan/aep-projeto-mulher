@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projetomulher">
         <activity
-            android:name=".telas.MainActivity"
+            android:name=".telas.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

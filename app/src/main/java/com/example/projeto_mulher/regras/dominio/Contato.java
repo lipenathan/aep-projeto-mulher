@@ -1,4 +1,4 @@
-package com.example.projeto_mulher.dominio;
+package com.example.projeto_mulher.regras.dominio;
 
 /**
  * Representa contatos da vítima

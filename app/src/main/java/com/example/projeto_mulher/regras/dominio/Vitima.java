@@ -1,10 +1,10 @@
-package com.example.projeto_mulher.dominio;
+package com.example.projeto_mulher.regras.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Representa a vítima/usuário do aplicação
+ * Representa a vítima/usuário da aplicação
  * @author Felipe Nathan
  * @since 03/11/2021
  * @version 03/11/2021

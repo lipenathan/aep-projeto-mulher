@@ -1,24 +1,25 @@
-package com.example.projeto_mulher.dominio;
-
-import javax.persistence.Id;
+package com.example.projeto_mulher.regras.dominio;
 
 /**
  * Representa número telefonico
+ *
  * @author Felipe Nathan
- * @since 03/11/2021
  * @version 1.0 03/11/2021
+ * @since 03/11/2021
  */
 public class Telefone {
-    @Id
+    private static final String TELEFONE_REGEX = "[(][0-9]{2}[)][3]{2}[0-9]{3}-[0-9]{4}";
+    private static final String TELEFONE_MOVEL_REGEX = "[(][0-9]{2}[)][9]{1}[0-9]{4}-[0-9]{4}";
     private Long id;
     private String numero;
     private Tipo tipo;
-    private static final String TELEFONE_REGEX = "[(][0-9]{2}[)][3]{2}[0-9]{3}-[0-9]{4}";
-    private static final String TELEFONE_MOVEL_REGEX = "[(][0-9]{2}[)][9]{1}[0-9]{4}-[0-9]{4}";
 
     public Telefone(String numero) {
         this.numero = numero;
         this.tipo = verificarTipo();
+    }
+
+    public Telefone() {
     }
 
     private Tipo verificarTipo() {
@@ -29,9 +30,6 @@ public class Telefone {
             return Tipo.MOVEL;
         }
         return null;
-    }
-
-    public Telefone() {
     }
 
     public void validarCampos() throws Exception {

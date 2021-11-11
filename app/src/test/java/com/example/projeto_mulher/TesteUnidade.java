@@ -1,9 +1,9 @@
 package com.example.projeto_mulher;
 
-import com.example.projeto_mulher.dominio.Contato;
-import com.example.projeto_mulher.dominio.Telefone;
-import com.example.projeto_mulher.dominio.Tipo;
-import com.example.projeto_mulher.dominio.Vitima;
+import com.example.projeto_mulher.regras.dominio.Contato;
+import com.example.projeto_mulher.regras.dominio.Telefone;
+import com.example.projeto_mulher.regras.dominio.Tipo;
+import com.example.projeto_mulher.regras.dominio.Vitima;
 
 import org.junit.Assert;
 import org.junit.Test;
