@@ -1,6 +1,7 @@
 package com.example.projeto_mulher;
 
 import com.example.projeto_mulher.regras.dominio.Contato;
+import com.example.projeto_mulher.regras.dominio.Endereco;
 import com.example.projeto_mulher.regras.dominio.Telefone;
 import com.example.projeto_mulher.regras.dominio.Tipo;
 import com.example.projeto_mulher.regras.dominio.Vitima;
@@ -15,7 +16,10 @@ public class TesteUnidade {
         Vitima vitima = new Vitima();
         vitima.setNome("Aline");
         vitima.setCpf("000.111.222-33");
-        vitima.setEndereco("Rua das mulheres amadas 71");
+        Endereco endereco = new Endereco();
+        endereco.setRua("Rua das mulheres amadas");
+        endereco.setNumero(71L);
+        vitima.setEndereco(endereco);
         try {
             vitima.adicionarTelefone(new Telefone("(43)98422-0022"));
             vitima.adicionarContato(fabricarContato());
@@ -57,6 +61,11 @@ public class TesteUnidade {
     public void validarTipoTelefone() {
         Telefone telefone = new Telefone("(43)3370-3305");
         System.out.println(telefone.getTipo());
+    }
+
+    @Test
+    public void teste() {
+        System.out.println(fabricarVtima().getEndereco().getEnderecoPorExtenso());
     }
 
 }

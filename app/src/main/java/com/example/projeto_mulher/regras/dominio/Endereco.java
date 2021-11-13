@@ -15,6 +15,10 @@ public class Endereco {
     private String rua;
     private Long numero;
 
+    public String getEnderecoPorExtenso() {
+        return rua + " nº" + numero + " " + cidade  + ", " + estado + ", " + cep;
+    }
+
     public Long getId() {
         return id;
     }

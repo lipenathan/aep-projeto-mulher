@@ -15,7 +15,7 @@ public abstract class Pessoa {
     protected Long id;
     protected String nome;
     protected String cpf;
-    protected String endereco;
+    protected Endereco endereco;
     protected List<Telefone> telefones = new ArrayList<>();
 
     public void validarCampos() throws Exception {
@@ -64,11 +64,11 @@ public abstract class Pessoa {
         this.cpf = cpf;
     }
 
-    public String getEndereco() {
+    public Endereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 }

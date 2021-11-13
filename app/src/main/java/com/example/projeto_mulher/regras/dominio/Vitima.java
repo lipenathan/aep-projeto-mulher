@@ -10,7 +10,7 @@ import java.util.List;
  * @version 03/11/2021
  */
 public class Vitima extends Pessoa {
-    private String numeroOcorrencia;
+    private MedidaProtetiva medidaProtetiva;
     private List<Contato> contatos = new ArrayList<>();
 
     public void adicionarContato(Contato contato) throws Exception{
@@ -34,21 +34,15 @@ public class Vitima extends Pessoa {
         }
     }
 
-    @Override
-    public String toString() {
-        return "Vitima{" +
-                "nome='" + nome + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", telefones=" + telefones +
-                ", numeroOcorrencia='" + numeroOcorrencia + '\'' +
-                '}';
+    public String getCodMedidaProtetiva() {
+        return this.medidaProtetiva.getCodMedida();
     }
 
-    public String getNumeroOcorrencia() {
-        return numeroOcorrencia;
+    public String getDescricaoMedidaProtetiva() {
+        return this.medidaProtetiva.getDescricao();
     }
 
-    public void setNumeroOcorrencia(String numeroOcorrencia) {
-        this.numeroOcorrencia = numeroOcorrencia;
+    public void setMedidaProtetiva(MedidaProtetiva medidaProtetiva) {
+        this.medidaProtetiva = medidaProtetiva;
     }
 }
