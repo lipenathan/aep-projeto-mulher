@@ -13,6 +13,7 @@ public class Telefone {
     private Long id;
     private String numero;
     private Tipo tipo;
+    private TipoPessoa tipoPessoa;
 
     public Telefone(String numero) {
         this.numero = numero;
@@ -63,5 +64,13 @@ public class Telefone {
 
     public void setTipo(Tipo tipo) {
         this.tipo = tipo;
+    }
+
+    public TipoPessoa getTipoPessoa() {
+        return tipoPessoa;
+    }
+
+    public void setTipoPessoa(TipoPessoa tipoPessoa) {
+        this.tipoPessoa = tipoPessoa;
     }
 }

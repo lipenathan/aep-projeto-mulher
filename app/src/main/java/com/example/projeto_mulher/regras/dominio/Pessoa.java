@@ -15,7 +15,7 @@ public abstract class Pessoa {
     protected Long id;
     protected String nome;
     protected String cpf;
-    protected Endereco endereco;
+    protected Endereco endereco = new Endereco();
     protected List<Telefone> telefones = new ArrayList<>();
 
     public void validarCampos() throws Exception {
@@ -34,6 +34,11 @@ public abstract class Pessoa {
 
     protected String gerarMensagemErro(String campo) {
         return "O campo: " + campo + ", de " + this.getClassName() + " precisa ser preenchido";
+    }
+
+
+    public Long getEnderecoId() {
+        return this.endereco.getId();
     }
 
     private String getClassName() {
