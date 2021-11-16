@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projetomulher">
         <activity
-            android:name=".telas.Cadastro"
+            android:name=".telas.Cadastro2"
+            android:exported="true" />
+        <activity
+            android:name=".telas.Cadastro1"
             android:exported="true" />
         <activity
             android:name=".telas.MainActivity"

@@ -41,6 +41,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             "descricao_ocorrencia text not null, local_vitima text, local_suspeito text, distancia_ocorrencia real, " +
             "status_ocorrencia text)";
 
+    private static final String CREATE_TABLE_MEDIDA_PROTETIVA = "CREATE TABLE IF NOT EXISTS tb_medida_protetiva" +
+            "(cod_medida integer primary key, descricao_medida text)";
+
     private static final String CREATE_TABLE_CAM = "CREATE TABLE IF NOT EXISTS tb_cam" +
             "(id_cam integer primary key autoincrement, contato_cam text)";
 
@@ -64,6 +67,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         logPassagem(DATABASE_CREATE_TABLE, "tb_ocorrencia");
         database.execSQL(CREATE_TABLE_CAM);
         logPassagem(DATABASE_CREATE_TABLE, "tb_cam");
+        database.execSQL(CREATE_TABLE_MEDIDA_PROTETIVA);
+        logPassagem(DATABASE_CREATE_TABLE, "tb_medida_protetiva");
     }
 
     @Override

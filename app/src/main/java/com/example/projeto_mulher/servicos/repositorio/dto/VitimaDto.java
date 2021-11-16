@@ -13,6 +13,17 @@ public class VitimaDto {
     private Long id_endereco;
     private String cod_medida_protetiva;
 
+    @Override
+    public String toString() {
+        return "VitimaDto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", id_endereco=" + id_endereco +
+                ", cod_medida_protetiva='" + cod_medida_protetiva + '\'' +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }

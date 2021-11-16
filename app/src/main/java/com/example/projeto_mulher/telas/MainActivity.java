@@ -1,27 +1,25 @@
 package com.example.projeto_mulher.telas;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projeto_mulher.R;
-import com.example.projeto_mulher.regras.dominio.MedidaProtetiva;
-import com.example.projeto_mulher.regras.dominio.Telefone;
-import com.example.projeto_mulher.regras.dominio.Vitima;
 
 
 public class MainActivity extends AppCompatActivity {
 
     public void cadastro(View view) {
-        Intent intent = new Intent(getApplicationContext(), Cadastro.class);
+        Intent intent = new Intent(getApplicationContext(), Cadastro1.class);
         startActivity(intent);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

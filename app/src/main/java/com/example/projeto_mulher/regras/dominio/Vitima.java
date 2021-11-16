@@ -34,6 +34,19 @@ public class Vitima extends Pessoa {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vitima{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", endereco=" + endereco +
+                ", telefones=" + telefones +
+                ", medidaProtetiva=" + medidaProtetiva.getCodMedida() +
+                ", contatos=" + contatos +
+                '}';
+    }
+
     public String getCodMedidaProtetiva() {
         return this.medidaProtetiva.getCodMedida();
     }
