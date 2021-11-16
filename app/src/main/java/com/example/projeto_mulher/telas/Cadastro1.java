@@ -31,6 +31,7 @@ public class Cadastro1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro1);
+        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
         repositorioVitima = new RepositorioVitima(this);
         txMedida = findViewById(R.id.txMedida);
         btProximo = findViewById(R.id.btProximo);
@@ -54,11 +55,51 @@ public class Cadastro1 extends AppCompatActivity {
             return;
         }
         boolean possuiMedida = txToString(txMedida).length() > 0;
+        MedidaProtetiva medidaProtetiva;
         Intent intent = new Intent(getApplicationContext(), Cadastro2.class);
-        MedidaProtetiva medidaProtetiva = new MedidaProtetiva(txToString(txMedida));
+        if (possuiMedida) {
+            medidaProtetiva = new MedidaProtetiva(txToString(txMedida));
+        } else {
+            medidaProtetiva = null;
+        }
         intent.putExtra("medida", medidaProtetiva);
         startActivity(intent);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Toast.makeText(this, "onStart-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "onResume-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "onPause-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, "onRestart-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy-Cadastro1", Toast.LENGTH_SHORT).show();
+    }
     // utilitarios privados
 }

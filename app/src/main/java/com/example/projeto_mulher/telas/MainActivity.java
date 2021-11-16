@@ -24,42 +24,42 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(this, "onStart-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStart-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "onResume-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onResume-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(this, "onPause-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onPause-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this, "onStop-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStop-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast.makeText(this, "onRestart-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onRestart-MainActivity", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "onDestroy-MainActivity", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onDestroy-MainActivity", Toast.LENGTH_SHORT).show();
     }
 }
