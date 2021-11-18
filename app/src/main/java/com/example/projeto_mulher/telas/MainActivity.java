@@ -10,9 +10,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.projeto_mulher.R;
+import com.example.projeto_mulher.regras.dominio.Vitima;
+import com.example.projeto_mulher.regras.processos.VerificarLogin;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private VerificarLogin verificarLogin;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -20,8 +24,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 //        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), Cadastro1.class);
-        startActivity(intent);
+        verificarLogin = new VerificarLogin(this);
+        Vitima vitima;
+        Intent intent;
+        try {
+            vitima = verificarLogin.validarLogin();
+            intent = new Intent(this, Principal.class);
+            intent.putExtra("vitima", vitima);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            intent = new Intent(getApplicationContext(), Cadastro1.class);
+            startActivity(intent);
+        }
     }
 
     @Override

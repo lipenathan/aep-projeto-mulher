@@ -1,0 +1,6 @@
+##############	acrescentar campo bairro	##############
+alterar tela e classe
+alterar repositorio
+
+
+##############	acrescentar fluxo para medida protetiva	##############

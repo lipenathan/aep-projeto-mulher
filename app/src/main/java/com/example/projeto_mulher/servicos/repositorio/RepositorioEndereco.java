@@ -2,15 +2,13 @@ package com.example.projeto_mulher.servicos.repositorio;
 
 import static com.example.projeto_mulher.servicos.util.Logs.INSERT_ERROR;
 import static com.example.projeto_mulher.servicos.util.Logs.SELECT_ERROR;
+import static com.example.projeto_mulher.servicos.util.Logs.logErro;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.projeto_mulher.regras.dominio.Endereco;
-import com.example.projeto_mulher.regras.dominio.Telefone;
-import com.example.projeto_mulher.regras.dominio.Tipo;
-import com.example.projeto_mulher.regras.dominio.TipoPessoa;
 import com.example.projeto_mulher.servicos.util.Logs;
 
 /**
@@ -26,6 +24,7 @@ public class RepositorioEndereco {
     private static final String INSERT = "INSERT INTO tb_endereco(estado_endereco, cidade_endereco, rua_endereco, numero_endereco) " +
             "VALUES(?, ?, ?, ?)";
     private static final String SELECT_IDS = "SELECT id_endereco FROM tb_endereco";
+    private static final String SELECT_COM_ID = "SELECT * FROM tb_endereco WHERE id_endereco = ?";
     // atributos de acesso à base de dados
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
@@ -54,14 +53,14 @@ public class RepositorioEndereco {
             database.execSQL(INSERT, params);
             Logs.logCrud(INSERT, "tb_endereco");
             close();
-            return getUltimoId();
+            return buscarUltimoId();
         } catch (Exception e) {
             Logs.logErro(INSERT_ERROR, e);
             throw new Exception("erro ao inserir dados - " + e.getMessage());
         }
     }
 
-    public Long getUltimoId() throws Exception {
+    public Long buscarUltimoId() throws Exception {
         long id;
         try {
             open();
@@ -78,5 +77,27 @@ public class RepositorioEndereco {
             Logs.logErro(SELECT_ERROR, e);
             throw new Exception("Erro ao buscar último Id - " + e.getMessage());
         }
+    }
+
+    public Endereco buscarEnderecoPeloId(Long id) throws Exception {
+        Endereco endereco = new Endereco();
+        params = new String[1];
+        params[0] = id.toString();
+        open();
+        try {
+            Cursor cursor = database.rawQuery(SELECT_COM_ID, (String[]) params);
+            cursor.moveToFirst();
+            endereco.setId(cursor.getLong(0));
+            endereco.setEstado(cursor.getString(1));
+            endereco.setCidade(cursor.getString(2));
+            endereco.setRua(cursor.getString(3));
+            endereco.setNumero(cursor.getLong(4));
+            cursor.close();
+            close();
+        } catch (Exception e) {
+            logErro(SELECT_ERROR, e);
+            throw new Exception("Erro ao buscar pelo id");
+        }
+        return endereco;
     }
 }

@@ -3,6 +3,8 @@ package com.example.projeto_mulher.regras.dominio;
 import static com.example.projeto_mulher.servicos.util.Util.EMAIL_REGEX;
 import static com.example.projeto_mulher.servicos.util.Util.NOME_REGEX;
 
+import com.example.projeto_mulher.servicos.repositorio.dto.VitimaDto;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,16 @@ public class Vitima extends Pessoa implements Serializable {
     private static final Long serialVersionUID = 1L;
     private MedidaProtetiva medidaProtetiva = new MedidaProtetiva();
     private List<Contato> contatos = new ArrayList<>();
+
+    public Vitima(VitimaDto vitimaDto) {
+        id = vitimaDto.getId();
+        nome = vitimaDto.getNome();
+        cpf = vitimaDto.getCpf();
+        email = vitimaDto.getEmail_vitima();
+    }
+
+    public Vitima() {
+    }
 
     public void adicionarContato(Contato contato) throws Exception{
         contato.validarCampos();
