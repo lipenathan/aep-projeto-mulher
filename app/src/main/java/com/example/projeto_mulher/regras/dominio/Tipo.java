@@ -19,4 +19,17 @@ public enum Tipo {
                 return "tipo não declarado";
         }
     }
+
+    public static Tipo verirficarTipo(String tipo) {
+        if (tipo.equals(MOVEL.toString())) {
+            return MOVEL;
+        }
+        if (tipo.equals(RESIDENCIAL.toString())) {
+            return RESIDENCIAL;
+        }
+        if (tipo.equals(COMERCIAL.toString())) {
+            return COMERCIAL;
+        }
+        return null;
+    }
 }

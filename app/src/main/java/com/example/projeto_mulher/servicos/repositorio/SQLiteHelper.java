@@ -1,6 +1,7 @@
 package com.example.projeto_mulher.servicos.repositorio;
 
 import static com.example.projeto_mulher.servicos.util.Logs.DATABASE_CREATE_TABLE;
+import static com.example.projeto_mulher.servicos.util.Logs.DROP_TABLE;
 import static com.example.projeto_mulher.servicos.util.Logs.logPassagem;
 
 import android.content.Context;
@@ -17,9 +18,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "app_mulher.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String CREATE_TABLE_VITIMA = "CREATE TABLE IF NOT EXISTS tb_vitima" +
+    private static final String DROP_TBVITIMA = "DROP TABLE IF EXISTS tb_vitima";
+    private static final String DROP_TBENDERECO = "DROP TABLE IF EXISTS tb_endereco";
+    private static final String CREATE_TABLE_VITIMA = "CREATE TABLE tb_vitima" +
             "(id_vitima integer primary key autoincrement, nome_vitima text not null, cpf_vitima text not null, " +
-            "id_endereco_vitima integer not null, cod_medida_protetiva text)";
+            "id_endereco_vitima integer not null, email_vitima text, cod_medida_protetiva text)";
 
     private static final String CREATE_TABLE_TELEFONE = "CREATE TABLE IF NOT EXISTS tb_telefone" +
             "(id_telefone integer primary key autoincrement, numero_telefone text not null, tipo_telefone text not null," +
@@ -27,7 +30,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_ENDERECO = "CREATE TABLE IF NOT EXISTS tb_endereco" +
             "(id_endereco integer primary key autoincrement, estado_endereco text not null, cidade_endereco text not null," +
-            "rua_endereco text not null, numero_endereco integer not null, cep_endereco text not null)";
+            "rua_endereco text not null, numero_endereco integer not null, cep_endereco text )";
 
     private static final String CREATE_TABLE_CONTATO = "CREATE TABLE IF NOT EXISTS tb_contato_vitima" +
             "(id_contato integer primary key autoincrement, nome_contato text not null, cpf_contato text, " +
@@ -53,6 +56,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
+//        database.execSQL(DROP_TBVITIMA);
+//        logPassagem(DROP_TABLE, "tb_vitima");
+//        database.execSQL(DROP_TBENDERECO);
+//        logPassagem(DROP_TABLE, "tb_endereco");
         database.execSQL(CREATE_TABLE_VITIMA);
         logPassagem(DATABASE_CREATE_TABLE, "tb_vitima");
         database.execSQL(CREATE_TABLE_TELEFONE);

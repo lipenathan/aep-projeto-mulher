@@ -1,5 +1,9 @@
 package com.example.projeto_mulher.regras.dominio;
 
+import static com.example.projeto_mulher.servicos.util.Util.EMAIL_REGEX;
+import static com.example.projeto_mulher.servicos.util.Util.NOME_REGEX;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +13,10 @@ import java.util.List;
  * @since 03/11/2021
  * @version 03/11/2021
  */
-public class Vitima extends Pessoa {
-    private MedidaProtetiva medidaProtetiva;
+public class Vitima extends Pessoa implements Serializable {
+
+    private static final Long serialVersionUID = 1L;
+    private MedidaProtetiva medidaProtetiva = new MedidaProtetiva();
     private List<Contato> contatos = new ArrayList<>();
 
     public void adicionarContato(Contato contato) throws Exception{
@@ -20,18 +26,31 @@ public class Vitima extends Pessoa {
 
     @Override
     public void validarCampos() throws Exception {
-        if (this.nome == null || this.nome.equals("")) {
+    }
+
+    public void validarNome() throws Exception {
+        if (this.nome == null || !this.nome.matches(NOME_REGEX)) {
             throw new Exception(gerarMensagemErro("nome"));
         }
-        if (this.cpf == null || this.cpf.equals("")) {
-            throw new Exception(gerarMensagemErro("cpf"));
+    }
+
+    public void validarCpf() throws Exception {
+        if (this.cpf == null || this.cpf.length() != 11) {
+            throw new Exception(gerarMensagemErro("CPF"));
         }
-        if (this.endereco == null || this.endereco.equals("")) {
-            throw new Exception(gerarMensagemErro("endereco"));
+    }
+
+    public void validarEmail() throws Exception {
+        if (!this.email.matches(EMAIL_REGEX)  && this.email.length() > 0) {
+            throw new Exception(gerarMensagemErro("E-mail"));
         }
-        if (this.telefones.isEmpty()) {
-            throw new Exception(gerarMensagemErro("telefone"));
-        }
+    }
+
+    // validações por tela
+    public void validarCadasatro2() throws Exception{
+        validarNome();
+        validarCpf();
+        validarEmail();
     }
 
     @Override
@@ -42,7 +61,6 @@ public class Vitima extends Pessoa {
                 ", cpf='" + cpf + '\'' +
                 ", endereco=" + endereco +
                 ", telefones=" + telefones +
-                ", medidaProtetiva=" + medidaProtetiva.getCodMedida() +
                 ", contatos=" + contatos +
                 '}';
     }

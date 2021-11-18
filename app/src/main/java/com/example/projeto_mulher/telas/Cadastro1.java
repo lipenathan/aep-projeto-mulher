@@ -20,10 +20,8 @@ import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
 public class Cadastro1 extends AppCompatActivity {
 
-    EditText txNome;
-    EditText txCpf;
-    EditText txMedida;
-    Button btProximo;
+    private EditText txMedida;
+    private Button btProximo;
     // repositorio de persistência do domínio vítima
     RepositorioVitima repositorioVitima;
 
@@ -31,7 +29,7 @@ public class Cadastro1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro1);
-        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
         repositorioVitima = new RepositorioVitima(this);
         txMedida = findViewById(R.id.txMedida);
         btProximo = findViewById(R.id.btProximo);
@@ -49,14 +47,14 @@ public class Cadastro1 extends AppCompatActivity {
         });
     }
 
-    public void pularParaTela2(View view) {
+    public void irParaTela2(View view) {
         if (txToString(txMedida).length() > 0 && txToString(txMedida).length() < 8) {
             Toast.makeText(this, "Número de Medida Protetiva \n inválido", Toast.LENGTH_LONG).show();
             return;
         }
         boolean possuiMedida = txToString(txMedida).length() > 0;
         MedidaProtetiva medidaProtetiva;
-        Intent intent = new Intent(getApplicationContext(), Cadastro2.class);
+        Intent intent = new Intent(this, Cadastro2.class);
         if (possuiMedida) {
             medidaProtetiva = new MedidaProtetiva(txToString(txMedida));
         } else {
@@ -69,37 +67,37 @@ public class Cadastro1 extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Toast.makeText(this, "onStart-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStart-Cadastro1", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, "onResume-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onResume-Cadastro1", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Toast.makeText(this, "onPause-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onPause-Cadastro1", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast.makeText(this, "onRestart-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onRestart-Cadastro1", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "onDestroy-Cadastro1", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onDestroy-Cadastro1", Toast.LENGTH_SHORT).show();
     }
     // utilitarios privados
 }

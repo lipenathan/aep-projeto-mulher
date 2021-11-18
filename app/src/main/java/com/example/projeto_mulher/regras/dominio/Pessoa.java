@@ -16,13 +16,14 @@ public abstract class Pessoa {
     protected String nome;
     protected String cpf;
     protected Endereco endereco = new Endereco();
+    protected String email;
     protected List<Telefone> telefones = new ArrayList<>();
 
     public void validarCampos() throws Exception {
         if (this.nome == null || nome.equals("")) {
             throw new Exception(gerarMensagemErro("nome"));
         }
-        if (this.telefones == null || telefones.equals("")) {
+        if (this.telefones == null || telefones.isEmpty()) {
             throw new Exception(gerarMensagemErro("telefones"));
         }
     }
@@ -33,7 +34,7 @@ public abstract class Pessoa {
     }
 
     protected String gerarMensagemErro(String campo) {
-        return "O campo: " + campo + ", de " + this.getClassName() + " precisa ser preenchido";
+        return campo + " não preenchido \nou com formato inválido";
     }
 
 
@@ -67,6 +68,22 @@ public abstract class Pessoa {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
     public Endereco getEndereco() {

@@ -19,4 +19,17 @@ public enum TipoPessoa {
                 return "tipo não declarado";
         }
     }
+
+    public static TipoPessoa verirficarTipo(String tipo) {
+        if (tipo.equals(VITIMA.toString())) {
+            return VITIMA;
+        }
+        if (tipo.equals(CONTATO.toString())) {
+            return CONTATO;
+        }
+        if (tipo.equals(SUSPEITO.toString())) {
+            return SUSPEITO;
+        }
+        return null;
+    }
 }

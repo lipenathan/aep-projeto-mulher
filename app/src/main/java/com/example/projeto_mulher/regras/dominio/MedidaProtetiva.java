@@ -26,6 +26,14 @@ public class MedidaProtetiva implements Serializable {
     public MedidaProtetiva() {
     }
 
+    @Override
+    public String toString() {
+        return "MedidaProtetiva{" +
+                "codMedida='" + codMedida + '\'' +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
+
     public String getCodMedida() {
         return codMedida;
     }

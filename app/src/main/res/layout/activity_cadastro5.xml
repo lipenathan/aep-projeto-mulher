@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".telas.Cadastro1">
+    tools:context=".telas.Cadastro5">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -16,6 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/imagem4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/buenard"
+        android:text="Escolha ou tire uma foto"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,32 +49,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/apoiomulher" />
 
-    <EditText
-        android:id="@+id/txMedida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Nº medida protetiva"
-        android:inputType="number"
-        android:maxEms="0"
-        android:maxLength="8"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:fontFamily="@font/buenard"
-        android:text="Já possui uma \nmedida protetiva?"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txMedida"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
-
     <Button
         android:id="@+id/btProximo"
         android:layout_width="wrap_content"
@@ -71,12 +57,10 @@
         android:background="#131113"
         android:backgroundTint="#151515"
         android:fontFamily="@font/buenard"
-        android:onClick="irParaTela2"
-        android:text="Não Possuo"
+        android:text="Próximo"
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

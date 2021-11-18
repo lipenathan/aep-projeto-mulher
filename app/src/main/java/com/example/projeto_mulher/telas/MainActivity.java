@@ -14,17 +14,14 @@ import com.example.projeto_mulher.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    public void cadastro(View view) {
-        Intent intent = new Intent(getApplicationContext(), Cadastro1.class);
-        startActivity(intent);
-    }
-
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
 //        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), Cadastro1.class);
+        startActivity(intent);
     }
 
     @Override

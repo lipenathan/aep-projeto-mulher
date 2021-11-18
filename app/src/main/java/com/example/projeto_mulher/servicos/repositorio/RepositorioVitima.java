@@ -22,13 +22,13 @@ import java.util.List;
  */
 public class RepositorioVitima {
 
-    // atributos de acesso a base de dados
+    // atributos de acesso à base de dados
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
     private Object[] params;
     // querys
-    private static final String INSERT_SEM_MEDIDA = "INSERT INTO tb_vitima(nome_vitima, cpf_vitima, id_endereco_vitima)" +
-            "VALUES (?, ?, ?)";
+    private static final String INSERT_SEM_MEDIDA = "INSERT INTO tb_vitima(nome_vitima, cpf_vitima, id_endereco_vitima, email_vitima)" +
+            "VALUES (?, ?, ?, ?)";
     private static final String SELECT = "SELECT * FROM tb_vitima";
 
     public RepositorioVitima (Context context) {
@@ -44,12 +44,13 @@ public class RepositorioVitima {
     }
 
     public Long inserirVitimaSemMedida(Vitima vitima) throws Exception{
-        params = new Object[3];
+        params = new Object[4];
         try {
             open();
             params[0] = vitima.getNome();
             params[1] = vitima.getCpf();
             params[2] = vitima.getEnderecoId();
+            params[3] = vitima.getEmail();
             database.execSQL(INSERT_SEM_MEDIDA, params);
             Logs.logCrud(INSERT, "tb_vitima");
             VitimaDto vitimaDto = buscarVitima();
@@ -67,13 +68,15 @@ public class RepositorioVitima {
             if (cursor.getCount() == 0) {
                 throw new Exception("Não há dados para serem consultados");
             }
+            System.out.println("#### CURSOR COUNT ---> " + cursor.getCount());
             cursor.moveToLast();
             VitimaDto vitima = new VitimaDto();
             vitima.setId(cursor.getLong(0));
             vitima.setNome(cursor.getString(1));
             vitima.setCpf(cursor.getString(2));
             vitima.setId_endereco(cursor.getLong(3));
-            vitima.setCod_medida_protetiva(cursor.getString(4));
+            vitima.setEmail_vitima(cursor.getString(4));
+            vitima.setCod_medida_protetiva(cursor.getString(5));
             cursor.close();
             close();
             return vitima;

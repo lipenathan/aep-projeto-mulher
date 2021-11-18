@@ -18,9 +18,13 @@ public class Logs {
     public static final String DATABASE_UPDATE = "DATABASE_UPDATE - ";
     public static final String DATABASE_DELETE = "DATABASE_DELETE - ";
     public static final String INSERT = "INSERT -";
+    public static final String DROP_TABLE = "DATABASE_DROP - ";
     // mensagens de erro
-    public static final String INSERT_ERROR = "INSERT ERROR - ";
-    public static final String SELECT_ERROR = "SELECT ERROR - ";
+    public static final String INSERT_ERROR = "INSERT_ERROR - ";
+    public static final String SELECT_ERROR = "SELECT_ERROR - ";
+    public static final String CADASTRO_2 = "CADASTRO2_ERROR -";
+    public static final String CADASTRO_3 = "CADASTRO3_ERROR -";
+    public static final String CADASTRO_4 = "CADASTRO4_ERROR -";
 
 
 

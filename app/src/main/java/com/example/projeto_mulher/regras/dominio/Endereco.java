@@ -1,19 +1,37 @@
 package com.example.projeto_mulher.regras.dominio;
 
+import java.io.Serializable;
+
 /**
  * Domínio de endereços
  * @author Felipe Nathan
  * @version 1.0 05/11/2021
  * @since 05/11/2021
  */
-public class Endereco {
+public class Endereco implements Serializable {
 
+    private static final Long serialVersionUID = 1L;
     private Long id;
     private String estado;
     private String cidade;
     private String cep;
     private String rua;
     private Long numero;
+
+    public void validarCadastro3() throws Exception {
+        if (this.estado == null || this.estado.isEmpty()) {
+            throw new Exception(gerarMensagemErro("estado"));
+        }
+        if (this.cidade == null || this.cidade.isEmpty()) {
+            throw new Exception(gerarMensagemErro("cidade"));
+        }
+        if (this.rua == null || this.rua.isEmpty()) {
+            throw new Exception(gerarMensagemErro("rua"));
+        }
+        if (this.numero == null || this.numero <= 0) {
+            throw new Exception(gerarMensagemErro("numero"));
+        }
+    }
 
     public String getEnderecoPorExtenso() {
         return rua + " nº" + numero + " " + cidade  + ", " + estado + ", " + cep;
@@ -64,5 +82,11 @@ public class Endereco {
     }
     public void setNumero(Long numero) {
         this.numero = numero;
+    }
+
+
+    // utilitários privados
+    private String gerarMensagemErro(String campo) {
+        return campo + " não preenchido \nou com formato inválido";
     }
 }

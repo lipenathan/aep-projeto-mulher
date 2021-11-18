@@ -1,5 +1,10 @@
 package com.example.projeto_mulher.regras.dominio;
 
+import static com.example.projeto_mulher.servicos.util.Util.FIXO_REGEX;
+import static com.example.projeto_mulher.servicos.util.Util.MOVEL_REGEX;
+
+import java.io.Serializable;
+
 /**
  * Representa número telefonico
  *
@@ -7,30 +12,37 @@ package com.example.projeto_mulher.regras.dominio;
  * @version 1.0 03/11/2021
  * @since 03/11/2021
  */
-public class Telefone {
-    private static final String TELEFONE_REGEX = "[(][0-9]{2}[)][3]{2}[0-9]{3}-[0-9]{4}";
-    private static final String TELEFONE_MOVEL_REGEX = "[(][0-9]{2}[)][9]{1}[0-9]{4}-[0-9]{4}";
+public class Telefone implements Serializable {
+
+    private static final Long serialVersionUID = 1L;
     private Long id;
     private String numero;
     private Tipo tipo;
+    private Long idPessoa;
     private TipoPessoa tipoPessoa;
+
+    public Telefone(String numero, Long idPessoa, TipoPessoa tipoPessoa) {
+        this.numero = numero;
+        this.idPessoa = idPessoa;
+        this.tipoPessoa = tipoPessoa;verificarTipo();
+    }
 
     public Telefone(String numero) {
         this.numero = numero;
-        this.tipo = verificarTipo();
+        verificarTipo();
     }
 
     public Telefone() {
     }
 
-    private Tipo verificarTipo() {
-        if (this.numero.matches(TELEFONE_REGEX)) {
-            return Tipo.RESIDENCIAL;
+    private void verificarTipo() {
+        if (this.numero.matches(FIXO_REGEX)) {
+            this.tipo =  Tipo.RESIDENCIAL;
+            return;
         }
-        if (this.numero.matches(TELEFONE_MOVEL_REGEX)) {
-            return Tipo.MOVEL;
+        if (this.numero.matches(MOVEL_REGEX)) {
+            this.tipo = Tipo.MOVEL;
         }
-        return null;
     }
 
     public void validarCampos() throws Exception {
@@ -60,6 +72,14 @@ public class Telefone {
 
     public Tipo getTipo() {
         return tipo;
+    }
+
+    public Long getIdPessoa() {
+        return idPessoa;
+    }
+
+    public void setIdPessoa(Long idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public void setTipo(Tipo tipo) {

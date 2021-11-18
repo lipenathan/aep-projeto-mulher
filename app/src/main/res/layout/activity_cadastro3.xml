@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".telas.Cadastro2">
+    tools:context=".telas.Cadastro3">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -45,12 +45,11 @@
         android:background="#131113"
         android:backgroundTint="#151515"
         android:fontFamily="@font/buenard"
-        android:onClick="irParaTela3"
+        android:onClick="irParaTela4"
         android:text="Próximo"
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
     <TextView
@@ -58,9 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/buenard"
-        android:text="Nome"
+        android:text="Estado"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
@@ -70,60 +69,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/buenard"
-        android:text="CPF"
+        android:text="Cidade"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/txNome" />
+        app:layout_constraintTop_toBottomOf="@+id/txCelular" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/buenard"
-        android:text="E-mail"
+        android:text="Rua"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/txCpf" />
+        app:layout_constraintTop_toBottomOf="@+id/txCidade" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/buenard"
+        android:text="Número"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/txRua" />
 
     <EditText
-        android:id="@+id/txNome"
+        android:id="@+id/txCelular"
         android:layout_width="228dp"
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="digite seu nome completo"
+        android:hint="digite o estado(UF)"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/txCpf"
+        android:id="@+id/txCidade"
         android:layout_width="228dp"
         android:layout_height="43dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="digite seu CPF"
-        android:inputType="number"
-        android:maxLength="11"
+        android:hint="digite a cidade"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/txEmail"
-        android:layout_width="228dp"
-        android:layout_height="45dp"
+        android:id="@+id/txRua"
+        android:layout_width="186dp"
+        android:layout_height="47dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="digite o e-mail"
+        android:hint="digite a rua"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+    <EditText
+        android:id="@+id/txNumero"
+        android:layout_width="186dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="nº da casa"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,7 @@ public class TesteUnidade {
 
     static Vitima fabricarVtima() {
         Vitima vitima = new Vitima();
-        vitima.setNome("Aline");
+        vitima.setNome(null);
         vitima.setCpf("000.111.222-33");
         Endereco endereco = new Endereco();
         endereco.setRua("Rua das mulheres amadas");
@@ -51,7 +51,7 @@ public class TesteUnidade {
     public void validarDadosVitima() {
         Vitima vitima = fabricarVtima();
         try {
-            vitima.validarCampos();
+            vitima.validarNome();
         } catch (Exception e) {
             Assert.fail("Deve validar Vítima com dados corretos -" + e.getMessage());
         }

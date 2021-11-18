@@ -11,6 +11,7 @@ public class VitimaDto {
     private String nome;
     private String cpf;
     private Long id_endereco;
+    private String email_vitima;
     private String cod_medida_protetiva;
 
     @Override
@@ -20,6 +21,7 @@ public class VitimaDto {
                 ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", id_endereco=" + id_endereco +
+                ", email_vitima='" + email_vitima + '\'' +
                 ", cod_medida_protetiva='" + cod_medida_protetiva + '\'' +
                 '}';
     }
@@ -54,6 +56,14 @@ public class VitimaDto {
 
     public void setId_endereco(Long id_endereco) {
         this.id_endereco = id_endereco;
+    }
+
+    public String getEmail_vitima() {
+        return email_vitima;
+    }
+
+    public void setEmail_vitima(String email_vitima) {
+        this.email_vitima = email_vitima;
     }
 
     public String getCod_medida_protetiva() {
