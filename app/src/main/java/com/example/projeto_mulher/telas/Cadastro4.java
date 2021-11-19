@@ -17,6 +17,7 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.Telefone;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioTelefone;
+import com.example.projeto_mulher.telas.dialogos.Dialog;
 
 /**
  * step 4 -> celular e pin
@@ -59,7 +60,15 @@ public class Cadastro4 extends AppCompatActivity {
             logErro(CADASTRO_4, e);
             return;
         }
+        mensagemTeste();
         Intent intent = new Intent(this, Cadastro5.class);
         startActivity(intent);
+    }
+
+    public void mensagemTeste() {
+        Dialog dialog = new Dialog("IMPORTANTE!", "Olá, o AMU possui uma calculadora que sobrepõe " +
+                "a aplicação principal\n\nApós concluir seu cadastro, sempre que precisar acessar o aplicativo " +
+                "digite o PIN que você escolheu e então o sinal de igual(=) para acessar");
+        dialog.show(getSupportFragmentManager(), "dialogo");
     }
 }

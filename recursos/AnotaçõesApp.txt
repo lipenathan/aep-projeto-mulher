@@ -4,6 +4,16 @@
 
 ##############	Arrumar ícone				##############	
 
+arrumar constraints
+
 colocar dicas pelo menos na primeira tela de cadastro
+ex: 
+o app funciona sem internet
+você poderá adicionar mais contatos, futuramente
+autorizar ligações e envio de sms em segundo plano
+
+
+alterar ação ao clicar em pedir ajuda
 
 D:\Workspace\aep-projeto-mulher-data
+

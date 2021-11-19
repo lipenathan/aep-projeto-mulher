@@ -22,5 +22,6 @@ public class Cadastro5 extends AppCompatActivity {
     public void irParaPrincipal(View view) {
         Intent intent = new Intent(this, Principal.class);
         startActivity(intent);
+        this.finishAfterTransition();
     }
 }
