@@ -71,7 +71,7 @@ public class Vitima extends Pessoa implements Serializable {
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
-                ", endereco=" + endereco +
+                ", endereco=" + endereco.getEnderecoPorExtenso() +
                 ", telefones=" + telefones +
                 ", contatos=" + contatos +
                 '}';

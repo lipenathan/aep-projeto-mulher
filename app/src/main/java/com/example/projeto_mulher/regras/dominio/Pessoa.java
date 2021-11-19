@@ -1,5 +1,6 @@
 package com.example.projeto_mulher.regras.dominio;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +11,9 @@ import java.util.List;
  * @version 1.0 03/11/2021
  * @since 03/11/2021
  */
-public abstract class Pessoa {
+public abstract class Pessoa implements Serializable {
 
+    private static final Long serialVersionUID = 1L;
     protected Long id;
     protected String nome;
     protected String cpf;

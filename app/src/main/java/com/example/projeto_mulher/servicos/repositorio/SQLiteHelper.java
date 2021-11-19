@@ -49,6 +49,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_CAM = "CREATE TABLE IF NOT EXISTS tb_cam" +
             "(id_cam integer primary key autoincrement, contato_cam text)";
+    private static final String CREATE_TABLE_CREDENCIAIS = "CREATE TABLE IF NOT EXISTS tb_credencial" +
+            "(id_credencial integer primary key autoincrement, senha text not null)";
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -76,6 +78,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         logPassagem(DATABASE_CREATE_TABLE, "tb_cam");
         database.execSQL(CREATE_TABLE_MEDIDA_PROTETIVA);
         logPassagem(DATABASE_CREATE_TABLE, "tb_medida_protetiva");
+        database.execSQL(CREATE_TABLE_CREDENCIAIS);
+        logPassagem(DATABASE_CREATE_TABLE, "tb_credencial");
     }
 
     @Override

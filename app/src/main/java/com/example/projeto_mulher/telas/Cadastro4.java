@@ -15,12 +15,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.Telefone;
+import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioTelefone;
 
+/**
+ * step 4 -> celular e pin
+ */
 public class Cadastro4 extends AppCompatActivity {
 
     // repositórios
     private RepositorioTelefone repositorioTelefone;
+    private RepositorioCredencial repositorioCredencial;
 
     private Long idVitima;
     private EditText txCelular;
@@ -30,6 +35,7 @@ public class Cadastro4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro4);
         repositorioTelefone = new RepositorioTelefone(this);
+        repositorioCredencial = new RepositorioCredencial(this);
         Bundle dados = getIntent().getExtras();
         idVitima = dados.getLong("idVitima");
         txCelular = findViewById(R.id.txCelular);

@@ -4,15 +4,19 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/calculadora"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/calculadora"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projetomulher">
         <activity
-            android:theme="@style/Theme.Projetomulher2"
+            android:name=".telas.CalculadoraTela"
+            android:exported="true"
+            android:theme="@style/CalcTheme"/>
+        <activity
             android:name=".telas.Principal"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Projetomulher2" />
         <activity
             android:name=".telas.Cadastro5"
             android:exported="true" />
@@ -33,7 +37,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -6,36 +6,60 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
-import com.example.projeto_mulher.R;
+import com.example.projeto_mulher.regras.dominio.Telefone;
 import com.example.projeto_mulher.regras.dominio.Vitima;
-import com.example.projeto_mulher.regras.processos.VerificarLogin;
+import com.example.projeto_mulher.regras.processos.Acesso;
+import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
+import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private VerificarLogin verificarLogin;
+    private Acesso acesso;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
-        verificarLogin = new VerificarLogin(this);
-        Vitima vitima;
-        Intent intent;
+        acesso = new Acesso(this);
         try {
-            vitima = verificarLogin.validarLogin();
-            intent = new Intent(this, Principal.class);
-            intent.putExtra("vitima", vitima);
+            acesso.gerarPin();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+//        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
+        Intent intent;
+        // determinar passo que a vítima parou
+        if (acesso.passoParado() == null) {
+            intent = new Intent(this, Cadastro1.class);
             startActivity(intent);
+            this.finishAfterTransition();
+            return;
+        }
+        if (acesso.passoParado() instanceof Vitima) {
+            intent = new Intent(this, Cadastro4.class);
+            intent.putExtra("idVitima",((Vitima) acesso.passoParado()).getId());
+            startActivity(intent);
+            this.finishAfterTransition();
+            return;
+        }
+        if (acesso.passoParado() instanceof Telefone) {
+            intent = new Intent(this, Cadastro5.class);
+            startActivity(intent);
+            this.finishAfterTransition();
+            return;
+        }
+        try {
+            acesso.validarLogin();
+            intent = new Intent(this, CalculadoraTela.class);
+            startActivity(intent);
+            this.finishAfterTransition();
         } catch (Exception e) {
             e.printStackTrace();
             intent = new Intent(getApplicationContext(), Cadastro1.class);
             startActivity(intent);
+            this.finishAfterTransition();
         }
     }
 

@@ -18,6 +18,9 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.MedidaProtetiva;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
+/**
+ * step 1 -> medida protetiva
+ */
 public class Cadastro1 extends AppCompatActivity {
 
     private EditText txMedida;

@@ -14,4 +14,23 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void teste() {
+        System.out.println("###########" + (retorna(1) instanceof Animal) + "################");
+    }
+
+    public Object retorna(int i) {
+        if(i == 0) return new Pessoa();
+        if(i == 1) return new Animal();
+        else return null;
+    }
+
+    static class Pessoa {
+
+    }
+
+    static class Animal {
+
+    }
 }

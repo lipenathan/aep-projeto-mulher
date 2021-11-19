@@ -1,6 +1,9 @@
-##############	acrescentar campo bairro	##############
-alterar tela e classe
-alterar repositorio
-
-
 ##############	acrescentar fluxo para medida protetiva	##############
+
+##############	acrescentar botão de ocorrencias****	##############	
+
+##############	Arrumar ícone				##############	
+
+colocar dicas pelo menos na primeira tela de cadastro
+
+D:\Workspace\aep-projeto-mulher-data

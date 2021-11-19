@@ -74,7 +74,9 @@ public class RepositorioTelefone {
             open();
             Cursor cursor = database.rawQuery(SELECT_TELEFONES_VITIMA, (String[]) params);
             if (cursor.getCount() == 0) {
-                throw new Exception("Não há dados para serem consultados");
+                Exception exception = new Exception("Não há dados para serem consultados");
+                Logs.logErro(SELECT_ERROR, exception);
+                throw exception;
             }
             cursor.moveToFirst();
             while (cursor.isAfterLast()) {

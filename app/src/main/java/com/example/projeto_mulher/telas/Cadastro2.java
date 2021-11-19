@@ -17,6 +17,9 @@ import com.example.projeto_mulher.regras.dominio.MedidaProtetiva;
 import com.example.projeto_mulher.regras.dominio.Vitima;
 import com.example.projeto_mulher.servicos.util.Logs;
 
+/**
+ * step 2 -> nome, cpf e e-amil
+ */
 public class Cadastro2 extends AppCompatActivity {
 
     private EditText txNome;

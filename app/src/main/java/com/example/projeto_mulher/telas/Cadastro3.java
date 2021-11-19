@@ -1,12 +1,9 @@
 package com.example.projeto_mulher.telas;
 
-import static com.example.projeto_mulher.servicos.util.Logs.CADASTRO_2;
 import static com.example.projeto_mulher.servicos.util.Logs.CADASTRO_3;
 import static com.example.projeto_mulher.servicos.util.Logs.logErro;
 import static com.example.projeto_mulher.servicos.util.Util.txToLong;
 import static com.example.projeto_mulher.servicos.util.Util.txToString;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +11,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.Endereco;
 import com.example.projeto_mulher.regras.dominio.Vitima;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioEndereco;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
+/**
+ * step 3 -> dados de endereço
+ */
 public class Cadastro3 extends AppCompatActivity {
 
     // repositórios
@@ -69,7 +71,7 @@ public class Cadastro3 extends AppCompatActivity {
             vitima.setId(repositorioVitima.inserirVitimaSemMedida(vitima));
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            logErro(CADASTRO_3,e);
+            logErro(CADASTRO_3, e);
             return;
         }
         Intent intent = new Intent(this, Cadastro4.class);

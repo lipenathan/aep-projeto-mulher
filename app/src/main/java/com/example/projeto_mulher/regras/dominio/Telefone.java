@@ -54,6 +54,17 @@ public class Telefone implements Serializable {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Telefone{" +
+                "id=" + id +
+                ", numero='" + numero + '\'' +
+                ", tipo=" + tipo +
+                ", idPessoa=" + idPessoa +
+                ", tipoPessoa=" + tipoPessoa +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }
