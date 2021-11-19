@@ -24,6 +24,7 @@ public class CalculadoraTela extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora);
+        repositorioCredencial = new RepositorioCredencial(this);
         try {
             credencial = repositorioCredencial.buscarCredencial();
         } catch (Exception e) {

@@ -24,6 +24,7 @@ public class Principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+        repositorioVitima = new RepositorioVitima(this);
         VitimaDto vitimaDto;
         try {
             vitimaDto = repositorioVitima.buscarVitima();

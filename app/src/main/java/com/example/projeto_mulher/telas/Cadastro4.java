@@ -29,6 +29,7 @@ public class Cadastro4 extends AppCompatActivity {
 
     private Long idVitima;
     private EditText txCelular;
+    private EditText txPin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +40,20 @@ public class Cadastro4 extends AppCompatActivity {
         Bundle dados = getIntent().getExtras();
         idVitima = dados.getLong("idVitima");
         txCelular = findViewById(R.id.txCelular);
+        txPin = findViewById(R.id.txPin);
     }
 
     public void irParaTela5(View view) {
         Telefone telefone = new Telefone(txToString(txCelular));
+        String novoPin;
         telefone.setIdPessoa(idVitima);
         telefone.setTipoPessoa(VITIMA);
         try {
             telefone.validarCampos();
             repositorioTelefone.inserirTelefone(telefone);
+            novoPin = txToString(txPin);
+            if (novoPin.length() < 4) throw new Exception("pin precisa conter\nno mínimo 4 digitos");
+            repositorioCredencial.atualizar(novoPin);
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             logErro(CADASTRO_4, e);

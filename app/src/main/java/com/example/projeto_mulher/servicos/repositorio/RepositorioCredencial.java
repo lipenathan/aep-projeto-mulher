@@ -74,6 +74,7 @@ public class RepositorioCredencial {
         Cursor cursor = database.rawQuery(SELECT, null);
         if (cursor.getCount() == 0) return null;
         if (cursor.getCount() > 1) throw new Exception("Mais de uma credencial encontrada");
+        cursor.moveToFirst();
         String senha = cursor.getString(0);
         cursor.close();
         close();

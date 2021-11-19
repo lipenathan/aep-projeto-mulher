@@ -30,7 +30,20 @@ public class MainActivity extends AppCompatActivity {
         }
 //        Toast.makeText(this, "onCreate-MainActivity", Toast.LENGTH_SHORT).show();
         Intent intent;
-        // determinar passo que a vítima parou
+        try {
+            acesso.validarLogin();
+            intent = new Intent(this, CalculadoraTela.class);
+            startActivity(intent);
+            this.finishAfterTransition();
+        } catch (Exception e) {
+            e.printStackTrace();
+            cadastro();
+        }
+    }
+
+    private void cadastro() {
+        Intent intent;
+        // determina passo que a vítima parou
         if (acesso.passoParado() == null) {
             intent = new Intent(this, Cadastro1.class);
             startActivity(intent);
@@ -46,18 +59,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if (acesso.passoParado() instanceof Telefone) {
             intent = new Intent(this, Cadastro5.class);
-            startActivity(intent);
-            this.finishAfterTransition();
-            return;
-        }
-        try {
-            acesso.validarLogin();
-            intent = new Intent(this, CalculadoraTela.class);
-            startActivity(intent);
-            this.finishAfterTransition();
-        } catch (Exception e) {
-            e.printStackTrace();
-            intent = new Intent(getApplicationContext(), Cadastro1.class);
             startActivity(intent);
             this.finishAfterTransition();
         }
