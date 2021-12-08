@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.MedidaProtetiva;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
+import com.example.projeto_mulher.telas.dialogos.Dialogo;
 
 /**
  * step 1 -> medida protetiva
@@ -38,6 +39,8 @@ public class Cadastro1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro1);
 //        Toast.makeText(this, "onStop-Cadastro1", Toast.LENGTH_SHORT).show();
+        dialogoMedidaProtetiva();
+        dialogoInternet();
         repositorioVitima = new RepositorioVitima(this);
         txMedida = findViewById(R.id.txMedida);
         btProximo = findViewById(R.id.btProximo);
@@ -72,6 +75,19 @@ public class Cadastro1 extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //diálogos
+    public void dialogoInternet() {
+        Dialogo dialogo = new Dialogo("INFORMAÇÃO","O aplicativo AMU não necessita de conexão com a internet." +
+                "\nPor isso precisamos de alguns dados, para que o seu cadastro seja feito de forma completa.");
+        dialogo.show(getSupportFragmentManager(), "dialogo");
+    }
+
+    public void dialogoMedidaProtetiva() {
+        Dialogo dialogo = new Dialogo("INFORMAÇÃO","Caso já possua uma medida protetiva digite o código," +
+                "e seus dados serão preenchidos automaticamente.");
+        dialogo.show(getSupportFragmentManager(), "dialogo");
+    }
+    //lifecycle activity
     @Override
     protected void onStart() {
         super.onStart();

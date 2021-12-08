@@ -145,7 +145,7 @@
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="nº da casa"
-        android:inputType="number"
+        android:inputType="number|textNoSuggestions"
         app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

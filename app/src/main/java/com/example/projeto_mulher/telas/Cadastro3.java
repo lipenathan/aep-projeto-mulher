@@ -54,15 +54,15 @@ public class Cadastro3 extends AppCompatActivity {
 
     public void irParaTela4(View view) {
         Endereco endereco = new Endereco();
-        endereco.setEstado(txToString(txEstado));
-        endereco.setCidade(txToString(txCidade));
-        endereco.setRua(txToString(txRua));
-        endereco.setNumero(txToLong(txNumero));
         Vitima vitima = new Vitima();
-        vitima.setNome(nome);
-        vitima.setCpf(cpf);
-        vitima.setEmail(email);
         try {
+            endereco.setEstado(txToString(txEstado));
+            endereco.setCidade(txToString(txCidade));
+            endereco.setRua(txToString(txRua));
+            endereco.setNumero(txToLong(txNumero));
+            vitima.setNome(nome);
+            vitima.setCpf(cpf);
+            vitima.setEmail(email);
             endereco.validarCadastro3();
             //salva endereço na base e recebe id
             endereco.setId(repositorioEndereco.inserirEndereco(endereco));

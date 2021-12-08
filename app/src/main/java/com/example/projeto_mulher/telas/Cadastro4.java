@@ -3,6 +3,7 @@ package com.example.projeto_mulher.telas;
 import static com.example.projeto_mulher.regras.dominio.TipoPessoa.VITIMA;
 import static com.example.projeto_mulher.servicos.util.Logs.CADASTRO_4;
 import static com.example.projeto_mulher.servicos.util.Logs.logErro;
+import static com.example.projeto_mulher.servicos.util.Util.MOVEL_REGEX;
 import static com.example.projeto_mulher.servicos.util.Util.txToString;
 
 import android.content.Intent;
@@ -17,7 +18,8 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.Telefone;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioTelefone;
-import com.example.projeto_mulher.telas.dialogos.Dialog;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 /**
  * step 4 -> celular e pin
@@ -42,6 +44,10 @@ public class Cadastro4 extends AppCompatActivity {
         idVitima = dados.getLong("idVitima");
         txCelular = findViewById(R.id.txCelular);
         txPin = findViewById(R.id.txPin);
+        //mascara celular
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("(NN)NNNNN-NNNN");
+        MaskTextWatcher mtw = new MaskTextWatcher(txCelular, smf);
+        txCelular.addTextChangedListener(mtw);
     }
 
     public void irParaTela5(View view) {
@@ -50,6 +56,7 @@ public class Cadastro4 extends AppCompatActivity {
         telefone.setIdPessoa(idVitima);
         telefone.setTipoPessoa(VITIMA);
         try {
+            if(!telefone.getNumero().matches(MOVEL_REGEX)) throw new Exception("Número não é celular, ou está com formato errado");
             telefone.validarCampos();
             repositorioTelefone.inserirTelefone(telefone);
             novoPin = txToString(txPin);
@@ -60,15 +67,7 @@ public class Cadastro4 extends AppCompatActivity {
             logErro(CADASTRO_4, e);
             return;
         }
-        mensagemTeste();
         Intent intent = new Intent(this, Cadastro5.class);
         startActivity(intent);
-    }
-
-    public void mensagemTeste() {
-        Dialog dialog = new Dialog("IMPORTANTE!", "Olá, o AMU possui uma calculadora que sobrepõe " +
-                "a aplicação principal\n\nApós concluir seu cadastro, sempre que precisar acessar o aplicativo " +
-                "digite o PIN que você escolheu e então o sinal de igual(=) para acessar");
-        dialog.show(getSupportFragmentManager(), "dialogo");
     }
 }

@@ -10,12 +10,12 @@
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro1.xml" value="0.25" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro2.xml" value="0.25" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro3.xml" value="0.33" />
-        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro4.xml" value="0.26875" />
+        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro4.xml" value="0.25" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_cadastro5.xml" value="0.33" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_calculadora.xml" value="0.26875" />
-        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_main2.xml" value="0.2" />
-        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_principal.xml" value="0.25" />
+        <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/activity_principal.xml" value="0.1" />
         <entry key="..\:/Workspace/aep-projeto-mulher/app/src/main/res/layout/login.xml" value="0.25" />
       </map>
     </option>
@@ -25,5 +25,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -1,8 +1,0 @@
-##################################################
-##########	ANOTAÇÕES APP		##########
-##################################################
-
-Tirar distância da ocorrência
-
-diagrama de classes:
-mudar cep para string

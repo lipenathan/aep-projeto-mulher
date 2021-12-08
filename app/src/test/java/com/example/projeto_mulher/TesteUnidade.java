@@ -5,6 +5,7 @@ import com.example.projeto_mulher.regras.dominio.Endereco;
 import com.example.projeto_mulher.regras.dominio.Telefone;
 import com.example.projeto_mulher.regras.dominio.Tipo;
 import com.example.projeto_mulher.regras.dominio.Vitima;
+import com.github.lipenathan.flynn.validador.Validador;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -65,7 +66,9 @@ public class TesteUnidade {
 
     @Test
     public void teste() {
-        System.out.println(fabricarVtima().getEndereco().getEnderecoPorExtenso());
+        Validador validador = new Validador();
+        boolean bool = validador.validarCpf("646.671.910-31");
+        System.out.println(bool);
+        Assert.assertTrue("Deve validar cpf", bool);
     }
-
 }

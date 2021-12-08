@@ -8,15 +8,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
-public class Dialog extends AppCompatDialogFragment {
+public class Dialogo extends AppCompatDialogFragment {
 
     private String titulo;
     private String mensagem;
 
-    public Dialog(String titulo, String mensagem) {
+    public Dialogo(String titulo, String mensagem) {
         this.titulo = titulo;
         this.mensagem = mensagem;
     }
+
 
     @NonNull
     @Override

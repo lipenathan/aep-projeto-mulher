@@ -34,7 +34,7 @@ public class Util {
      * @return String
      */
     public static String txToString(EditText editText) {
-        return editText.getText().toString();
+        return editText.getText().length() > 0? editText.getText().toString() : "";
     }
 
     /**
@@ -43,6 +43,6 @@ public class Util {
      * @return Long
      */
     public static Long txToLong(EditText editText) {
-        return Long.valueOf(editText.getText().toString());
+        return editText.getText().length() > 0? Long.valueOf(editText.getText().toString()) : 0;
     }
 }

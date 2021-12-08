@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,9 +13,6 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.Vitima;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 import com.example.projeto_mulher.servicos.repositorio.dto.VitimaDto;
-import com.example.projeto_mulher.telas.dialogos.Dialog;
-
-import java.net.URI;
 
 public class Principal extends AppCompatActivity {
 
@@ -46,13 +42,6 @@ public class Principal extends AppCompatActivity {
         txUsuario.setText(ola);
         btAjuda = findViewById(R.id.btAjuda);
         btGuarda = findViewById(R.id.btGuarda);
-//        btGuarda.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_CALL);
-//                intent.setData(Uri.parse(TEL_GUARDA_MUNICIPAL));
-//            }
-//        });
     }
 
     public void ligarParaGuarda(View view) {
@@ -60,7 +49,6 @@ public class Principal extends AppCompatActivity {
         intent.setData(Uri.parse(TEL_GUARDA_MUNICIPAL));
         startActivity(intent);
     }
-
 
     public void pedirAjuda(View view) {
         btAjuda.setImageResource(R.drawable.apoio);

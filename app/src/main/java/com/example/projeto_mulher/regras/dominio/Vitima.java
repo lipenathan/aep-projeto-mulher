@@ -4,6 +4,7 @@ import static com.example.projeto_mulher.servicos.util.Util.EMAIL_REGEX;
 import static com.example.projeto_mulher.servicos.util.Util.NOME_REGEX;
 
 import com.example.projeto_mulher.servicos.repositorio.dto.VitimaDto;
+import com.github.lipenathan.flynn.validador.Validador;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,7 +48,9 @@ public class Vitima extends Pessoa implements Serializable {
     }
 
     public void validarCpf() throws Exception {
-        if (this.cpf == null || this.cpf.length() != 11) {
+        if (this.cpf == null || this.cpf.length() < 11) {
+            throw new Exception(gerarMensagemErro("CPF"));
+        } else if (!Validador.validarCpf(cpf)) {
             throw new Exception(gerarMensagemErro("CPF"));
         }
     }

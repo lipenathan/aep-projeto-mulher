@@ -16,6 +16,9 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.regras.dominio.MedidaProtetiva;
 import com.example.projeto_mulher.regras.dominio.Vitima;
 import com.example.projeto_mulher.servicos.util.Logs;
+import com.github.rtoshiro.util.format.MaskFormatter;
+import com.github.rtoshiro.util.format.SimpleMaskFormatter;
+import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 /**
  * step 2 -> nome, cpf e e-amil
@@ -26,6 +29,8 @@ public class Cadastro2 extends AppCompatActivity {
     private EditText txCpf;
     private EditText txEmail;
     MedidaProtetiva medidaProtetiva;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,10 @@ public class Cadastro2 extends AppCompatActivity {
         txNome = findViewById(R.id.txNome);
         txCpf = findViewById(R.id.txCpf);
         txEmail = findViewById(R.id.txEmail);
+        //mascara cpf
+        SimpleMaskFormatter smf = new SimpleMaskFormatter("NNN.NNN.NNN-NN");
+        MaskTextWatcher mtw = new MaskTextWatcher(txCpf, smf);
+        txCpf.addTextChangedListener(mtw);
     }
 
     public void irParaTela3(View view) {
