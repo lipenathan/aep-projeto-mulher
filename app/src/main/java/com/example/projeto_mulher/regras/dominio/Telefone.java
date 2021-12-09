@@ -1,7 +1,8 @@
 package com.example.projeto_mulher.regras.dominio;
 
-import static com.example.projeto_mulher.servicos.util.Util.FIXO_REGEX;
-import static com.example.projeto_mulher.servicos.util.Util.MOVEL_REGEX;
+
+import static com.github.lipenathan.flynn.validador.Validador.FIXO_REGEX;
+import static com.github.lipenathan.flynn.validador.Validador.MOVEL_REGEX;
 
 import java.io.Serializable;
 
@@ -24,7 +25,8 @@ public class Telefone implements Serializable {
     public Telefone(String numero, Long idPessoa, TipoPessoa tipoPessoa) {
         this.numero = numero;
         this.idPessoa = idPessoa;
-        this.tipoPessoa = tipoPessoa;verificarTipo();
+        this.tipoPessoa = tipoPessoa;
+        verificarTipo();
     }
 
     public Telefone(String numero) {
@@ -37,7 +39,7 @@ public class Telefone implements Serializable {
 
     private void verificarTipo() {
         if (this.numero.matches(FIXO_REGEX)) {
-            this.tipo =  Tipo.RESIDENCIAL;
+            this.tipo = Tipo.RESIDENCIAL;
             return;
         }
         if (this.numero.matches(MOVEL_REGEX)) {
@@ -85,16 +87,16 @@ public class Telefone implements Serializable {
         return tipo;
     }
 
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+
     public Long getIdPessoa() {
         return idPessoa;
     }
 
     public void setIdPessoa(Long idPessoa) {
         this.idPessoa = idPessoa;
-    }
-
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
     }
 
     public TipoPessoa getTipoPessoa() {

@@ -1,7 +1,7 @@
 package com.example.projeto_mulher.regras.dominio;
 
-import static com.example.projeto_mulher.servicos.util.Util.EMAIL_REGEX;
-import static com.example.projeto_mulher.servicos.util.Util.NOME_REGEX;
+import static com.github.lipenathan.flynn.validador.Validador.EMAIL_REGEX;
+import static com.github.lipenathan.flynn.validador.Validador.NOME_REGEX;
 
 import com.example.projeto_mulher.servicos.repositorio.dto.VitimaDto;
 import com.github.lipenathan.flynn.validador.Validador;
@@ -12,9 +12,10 @@ import java.util.List;
 
 /**
  * Representa a vítima/usuário da aplicação
+ *
  * @author Felipe Nathan
- * @since 03/11/2021
  * @version 03/11/2021
+ * @since 03/11/2021
  */
 public class Vitima extends Pessoa implements Serializable {
 
@@ -32,7 +33,7 @@ public class Vitima extends Pessoa implements Serializable {
     public Vitima() {
     }
 
-    public void adicionarContato(Contato contato) throws Exception{
+    public void adicionarContato(Contato contato) throws Exception {
         contato.validarCampos();
         this.contatos.add(contato);
     }
@@ -56,13 +57,13 @@ public class Vitima extends Pessoa implements Serializable {
     }
 
     public void validarEmail() throws Exception {
-        if (!this.email.matches(EMAIL_REGEX)  && this.email.length() > 0) {
+        if (!this.email.matches(EMAIL_REGEX) && this.email.length() > 0) {
             throw new Exception(gerarMensagemErro("E-mail"));
         }
     }
 
     // validações por tela
-    public void validarCadasatro2() throws Exception{
+    public void validarCadasatro2() throws Exception {
         validarNome();
         validarCpf();
         validarEmail();

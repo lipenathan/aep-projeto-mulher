@@ -11,7 +11,7 @@ public class Suspeito extends Pessoa{
     /**
      * método responsável por disparar alerme de proximidade do suspeito
      */
-    public void monitorarLocalização() {
+    public void monitorarLocalizacao() {
         // falta implementar
     }
 }

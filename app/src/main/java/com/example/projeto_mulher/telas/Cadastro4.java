@@ -3,8 +3,8 @@ package com.example.projeto_mulher.telas;
 import static com.example.projeto_mulher.regras.dominio.TipoPessoa.VITIMA;
 import static com.example.projeto_mulher.servicos.util.Logs.CADASTRO_4;
 import static com.example.projeto_mulher.servicos.util.Logs.logErro;
-import static com.example.projeto_mulher.servicos.util.Util.MOVEL_REGEX;
 import static com.example.projeto_mulher.servicos.util.Util.txToString;
+import static com.github.lipenathan.flynn.validador.Validador.MOVEL_REGEX;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +23,7 @@ import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 /**
  * Cadastro -> celular e pin
+ *
  * @author Felipe Nathan
  * @version 1.0 15/11/2021
  * @since 15/11/2021
@@ -59,7 +60,8 @@ public class Cadastro4 extends AppCompatActivity {
         telefone.setIdPessoa(idVitima);
         telefone.setTipoPessoa(VITIMA);
         try {
-            if(!telefone.getNumero().matches(MOVEL_REGEX)) throw new Exception("Número não é celular, ou está com formato errado");
+            if (!telefone.getNumero().matches(MOVEL_REGEX))
+                throw new Exception("Número não é celular, ou está com formato errado");
             telefone.validarCampos();
             repositorioTelefone.inserirTelefone(telefone);
             novoPin = txToString(txPin);
