@@ -12,6 +12,12 @@ import com.example.projeto_mulher.regras.dominio.calculadora.Calculadora;
 import com.example.projeto_mulher.regras.dominio.calculadora.Operacao;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
 
+/**
+ * Tela Calculadora (máscara)
+ * @author Felipe Nathan
+ * @version 1.0 17/11/2021
+ * @since 17/11/2021
+ */
 public class CalculadoraTela extends Activity {
 
     private Calculadora calculadora = new Calculadora();

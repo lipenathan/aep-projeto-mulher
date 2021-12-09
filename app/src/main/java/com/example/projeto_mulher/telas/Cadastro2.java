@@ -21,7 +21,10 @@ import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 /**
- * step 2 -> nome, cpf e e-amil
+ * Cadastro -> nome, cpf e e-amil
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
  */
 public class Cadastro2 extends AppCompatActivity {
 

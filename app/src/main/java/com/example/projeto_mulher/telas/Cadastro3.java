@@ -20,7 +20,10 @@ import com.example.projeto_mulher.servicos.repositorio.RepositorioEndereco;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
 /**
- * step 3 -> dados de endereço
+ * Cadastro -> dados de endereço
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
  */
 public class Cadastro3 extends AppCompatActivity {
 

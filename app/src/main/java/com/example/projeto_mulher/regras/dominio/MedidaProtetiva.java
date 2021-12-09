@@ -3,7 +3,7 @@ package com.example.projeto_mulher.regras.dominio;
 import java.io.Serializable;
 
 /**
- * Classe que representa a medida protetiva da vítima
+ * Representa a medida protetiva da vítima
  * @author Felipe Nathan
  * @version 1.0 13/11/2021
  * @since 13/11/2021

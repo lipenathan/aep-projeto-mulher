@@ -18,7 +18,6 @@ import java.util.List;
 
 /**
  * Acesso ao repositório de domínio telefone
- *
  * @author Felipe Nathan
  * @version 1.0 16/11/2021
  * @since 16/11/2021

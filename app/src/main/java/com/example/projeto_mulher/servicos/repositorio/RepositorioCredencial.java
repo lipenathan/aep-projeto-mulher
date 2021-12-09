@@ -10,7 +10,6 @@ import com.example.projeto_mulher.servicos.util.Logs;
 
 /**
  * acesso ao repositório da credencial da vitima
- *
  * @author Felipe Nathan
  * @version 1.0 18/11/2021
  * @since 18/11/2021

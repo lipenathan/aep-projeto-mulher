@@ -13,7 +13,6 @@ import com.example.projeto_mulher.servicos.util.Logs;
 
 /**
  * Acesso ao repositório de domínio telefone
- *
  * @author Felipe Nathan
  * @version 1.0 16/11/2021
  * @since 16/11/2021

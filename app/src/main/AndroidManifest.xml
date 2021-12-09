@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projeto_mulher">
-<uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/calculadora"
@@ -11,9 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projetomulher">
         <activity
+            android:name=".telas.Manual"
+            android:exported="true" />
+        <activity
+            android:name=".telas.NaoDesenvolvido"
+            android:exported="true" />
+        <activity
             android:name=".telas.CalculadoraTela"
             android:exported="true"
-            android:theme="@style/CalcTheme"/>
+            android:theme="@style/CalcTheme" />
         <activity
             android:name=".telas.Principal"
             android:exported="true"
@@ -38,6 +46,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

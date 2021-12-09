@@ -10,7 +10,10 @@ import com.example.projeto_mulher.R;
 import com.example.projeto_mulher.telas.dialogos.Dialogo;
 
 /**
- * step 5 -> foto vítima
+ * Cadastro -> foto vítima
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
  */
 public class Cadastro5 extends AppCompatActivity {
 
@@ -25,7 +28,7 @@ public class Cadastro5 extends AppCompatActivity {
     public void irParaPrincipal(View view) {
         Intent intent = new Intent(this, Principal.class);
         startActivity(intent);
-        this.finishAfterTransition();
+        finishAffinity();
     }
 
     public void dialogoPin1() {

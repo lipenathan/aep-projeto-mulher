@@ -25,7 +25,10 @@ import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 import com.example.projeto_mulher.telas.dialogos.Dialogo;
 
 /**
- * step 1 -> medida protetiva
+ * Cadastro -> Medida Protetiva
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
  */
 public class Cadastro1 extends AppCompatActivity {
 

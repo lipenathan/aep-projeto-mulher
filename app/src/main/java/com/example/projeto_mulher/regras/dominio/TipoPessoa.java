@@ -2,6 +2,12 @@ package com.example.projeto_mulher.regras.dominio;
 
 import androidx.annotation.NonNull;
 
+/**
+ * Define tipos de pessoa
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
+ */
 public enum TipoPessoa {
     VITIMA, CONTATO, SUSPEITO;
 

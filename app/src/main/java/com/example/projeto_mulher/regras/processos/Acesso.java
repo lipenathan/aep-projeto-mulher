@@ -15,6 +15,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Processo com regras de negócios de acesso da aplicação
+ * @author Felipe Nathan
+ * @version 1.0 18/11/2021
+ * @since 18/11/2021
+ */
 public class Acesso {
 
     RepositorioVitima repositorioVitima;
@@ -29,6 +35,11 @@ public class Acesso {
         repositorioCredencial = new RepositorioCredencial(context);
     }
 
+    /**
+     * Valida se o usuário ja se cadastrou
+     * @return Vitima com seus dados caso ja tenha feito cadastro
+     * @throws Exception
+     */
     public Vitima validarLogin() throws Exception {
         VitimaDto vitimaDto = repositorioVitima.buscarVitima();
         Vitima vitima = new Vitima(vitimaDto);
@@ -39,6 +50,10 @@ public class Acesso {
         return vitima;
     }
 
+    /**
+     * Gera o pin padrão da apliacação
+     * @throws Exception
+     */
     public void gerarPin() throws Exception {
         String pin = repositorioCredencial.buscarCredencial();
         if (pin == null || pin.isEmpty()) {
@@ -50,6 +65,10 @@ public class Acesso {
         repositorioCredencial.atualizar(senha);
     }
 
+    /**
+     * Verifica qual passo o usuário parou o cadastro
+     * @return
+     */
     public Object passoParado(){
         Object objeto = null;
         try {

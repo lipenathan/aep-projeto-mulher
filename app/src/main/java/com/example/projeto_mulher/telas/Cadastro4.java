@@ -22,7 +22,10 @@ import com.github.rtoshiro.util.format.SimpleMaskFormatter;
 import com.github.rtoshiro.util.format.text.MaskTextWatcher;
 
 /**
- * step 4 -> celular e pin
+ * Cadastro -> celular e pin
+ * @author Felipe Nathan
+ * @version 1.0 15/11/2021
+ * @since 15/11/2021
  */
 public class Cadastro4 extends AppCompatActivity {
 

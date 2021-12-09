@@ -3,7 +3,7 @@ package com.example.projeto_mulher.regras.dominio;
 import java.io.Serializable;
 
 /**
- * Domínio de endereços
+ * Domínio de endereço
  * @author Felipe Nathan
  * @version 1.0 05/11/2021
  * @since 05/11/2021

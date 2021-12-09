@@ -8,6 +8,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
+/**
+ * Gerador de diálogos da aplicação
+ * @author Felipe Nathan
+ * @version 1.0 08/12/2021
+ * @since 08/12/2021
+ */
 public class Dialogo extends AppCompatDialogFragment {
 
     private String titulo;

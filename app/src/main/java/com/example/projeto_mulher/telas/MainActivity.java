@@ -13,7 +13,12 @@ import com.example.projeto_mulher.regras.processos.Acesso;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioCredencial;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 
-
+/**
+ * Atividade Principal da aplicação
+ * @author Felipe Nathan
+ * @version 1.0 09/11/2021
+ * @since 09/11/2021
+ */
 public class MainActivity extends AppCompatActivity {
 
     private Acesso acesso;

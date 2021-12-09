@@ -23,6 +23,12 @@ import com.example.projeto_mulher.regras.dominio.Vitima;
 import com.example.projeto_mulher.servicos.repositorio.RepositorioVitima;
 import com.example.projeto_mulher.servicos.repositorio.dto.VitimaDto;
 
+/**
+ * Tela principal da aplicação
+ * @author Felipe Nathan
+ * @version 1.0 18/11/2021
+ * @since 18/11/2021
+ */
 public class Principal extends AppCompatActivity {
 
     // repositórios
@@ -102,5 +108,15 @@ public class Principal extends AppCompatActivity {
 
     public void pedirAjuda(View view) {
         btAjuda.setImageResource(R.drawable.apoio);
+    }
+
+    public void irParaNaoDesenvolvido(View view) {
+        Intent intent = new Intent(this, NaoDesenvolvido.class);
+        startActivity(intent);
+    }
+
+    public void irParaManual(View view) {
+        Intent intent = new Intent(this, Manual.class);
+        startActivity(intent);
     }
 }

@@ -15,7 +15,3 @@ D:\Workspace\aep-projeto-mulher-data
 
 
 ##############	MELHORIAS	##############	
-
--Colocar Validador de CPF;
--Colocar Máscara(telefone e onde mais precisar);
--ver bug de sair do app no momento da foto;
