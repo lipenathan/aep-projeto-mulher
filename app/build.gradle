@@ -16,9 +16,10 @@ android {
     }
 
     buildTypes {
-        release {
+        AMU {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            versionNameSuffix '1.0'
         }
     }
     compileOptions {
