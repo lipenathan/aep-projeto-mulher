@@ -36,3 +36,4 @@ Demais pessoas envolvidas no projeto foram Charles Mendes de Lima e Fabio Silvei
 - SQLite (Base de dados local)
 
 ## Como instalar
+teste
