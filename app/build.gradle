@@ -3,6 +3,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        amu {
+            storeFile file('D:\\keys\\key.jks')
+            storePassword 'abc123'
+            keyAlias 'key0'
+            keyPassword 'abc123'
+        }
+    }
     compileSdk 30
 
     defaultConfig {
@@ -13,13 +21,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.amu
     }
 
     buildTypes {
-        AMU {
+        amu {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            versionNameSuffix '1.0'
         }
     }
     compileOptions {
