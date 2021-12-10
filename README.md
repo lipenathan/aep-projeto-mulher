@@ -6,9 +6,9 @@ A proposta era desenvolver uma solução que ajudasse a mulher, vítima de viol�
 
 - [Resumo da Aplicação](#resumo-da-aplicação)
 - [Funcionalidades Implementadas](#funcionalidades-implementadas)
-- [Observações](#observacães)
+- [Observações](#observações)
 - [Tecnologias e bibliotecas Usadas](#tecnologias-e-bibliotecas-usadas)
-- [Instalação e Uso](#instalacão-e-uso)
+- [Instalação e Uso](#instalação-e-uso)
 
 ## Resumo da Aplicação
 A proposta do grupo foi de desenvolver uma aplicação que não necessitasse de internet e o caminho escolhido para tal, foi o de propor a comunicação via MMS, desta forma o dispositivo necessitaria apenas de um pacote de MMS disponibilizado pelas autoridades responsáveis pela proteção da mulher.
