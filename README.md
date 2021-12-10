@@ -1,5 +1,5 @@
-# Aplicativo AMU (Apoio Mulher)
-> Atividade de Estudo Programada - Aplicativo para segurança da mulher.
+# Aplicativo AMU
+> Atividade de Estudo Programada, AMU (Apoio Mulher) - Aplicativo para segurança da mulher
 
 Essa aplicação foi desenvolvida para Atividade de Estudo Programada do 2º Semestre de 2021 da turma de Análise e Desenvolvimento de Sistemas da Unicesumar Londrina - PR.
 A proposta era desenvolver uma solução que ajudasse a mulher, vítima de violência doméstica, a acionar a autoridade competente para que auxiliasse na sua proteção, com foco em mulheres que já possuíssem medida protetiva. O aplicativo funcionaria como um botão do pânico onde a mulher poderia acionar de forma rápida quando se sentisse ameaçada.
@@ -105,4 +105,4 @@ Demais pessoas envolvidas no projeto foram Charles Mendes de Lima e Fabio Silvei
   <img src="https://github.com/lipenathan/amu-app/blob/main/readme-images/img15.jpeg" width="367" height="800">
 </p>
 
-- [Voltar para o Inicio](#aplicativo-amu-(apoio-mulher))
+- [Voltar para o Inicio](#aplicativo-amu)
