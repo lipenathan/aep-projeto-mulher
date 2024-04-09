@@ -1,52 +1,72 @@
 plugins {
-    id 'com.android.application'
+    id ("com.android.application")
+    id ("com.google.gms.google-services")
+    id("com.google.firebase.appdistribution")
 }
 
 android {
     signingConfigs {
-        amu {
-            storeFile file('D:\\keys\\key.jks')
+        release {
+            storeFile file('E:\\keys\\projeto-amu.jks')
             storePassword 'abc123'
-            keyAlias 'key0'
+            keyAlias 'app-amu'
             keyPassword 'abc123'
         }
     }
-    compileSdk 30
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.projeto_mulher"
+        applicationId "com.example.projeto_amu"
         minSdk 21
-        targetSdk 30
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.amu
+        signingConfig signingConfigs.release
     }
 
     buildTypes {
-        amu {
+
+        release {
             minifyEnabled false
+
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    flavorDimensions "default"
+
+    productFlavors {
+        homolog {
+            firebaseAppDistribution {
+                appId="1:18620381208:android:edaafadfad3af7d45bab6d"
+                serviceCredentialsFile="app/service-account-firebasedist.json"
+                artifactType = "APK"
+                releaseNotesFile = "app/homolognotes.txt"
+                testers = "felipenatthan@gmail.com"
+            }
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    namespace 'com.example.projeto_amu'
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation files('D:/util/flynn/flynn_1.0.jar')
+    implementation files('E:/util/flynn/flynn.jar')
     implementation 'com.github.rtoshiro.mflibrary:mflibrary:1.0.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     testImplementation 'android.arch.core:core-testing:1.0.0-alpha3'
     testImplementation 'android.arch.core:core-testing:1.0.0-alpha3'
-
 }
